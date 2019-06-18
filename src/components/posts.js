@@ -2,15 +2,20 @@ import React, {Component} from 'react';
 
 class Posts extends Component {
     renderData=()=>{
-        return this.props.post.map((data)=>{
-            <tr>
-                <td>{data.userId}</td>
-                <td>{data.id}</td>
-                <td>{data.title}</td>
-                <td>{data.body}</td>
-            </tr>
+        return this.props.post.map(data=>{
+            return (
+                <tr key={data.id}>
+                    <td>{data.userId}</td>
+                    <td>{data.id}</td>
+                    <td>{data.title}</td>
+                    <td>{data.body}</td>
+                </tr>
+            )
+        }
 
-        })
+
+        )
+
     }
 
     render(){
