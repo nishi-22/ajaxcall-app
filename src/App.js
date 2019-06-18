@@ -1,21 +1,32 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import axios from 'axios';
+import Posts from './components/posts';
 import './App.css';
 
+
 class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
+  state={
+    posts:[]
   }
+
+
+  componentDidMount(){
+
+     axios.get('https://jsonplaceholder.typicode.com/posts')
+         .then(response => {
+             console.log(response);
+             this.setState({
+                 posts: response.data
+             })
+         })
+  }
+
+  render()
+      {
+          return (
+              <Posts post={this.state.posts}></Posts>
+          );
+      }
 }
 
 export default App;
