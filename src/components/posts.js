@@ -9,12 +9,10 @@ class Posts extends Component {
                     <td>{data.id}</td>
                     <td>{data.title}</td>
                     <td>{data.body}</td>
+
                 </tr>
             )
-        }
-
-
-        )
+        })
 
     }
 
@@ -28,6 +26,7 @@ class Posts extends Component {
                             <th>Id</th>
                             <th>Title</th>
                             <th>Body</th>
+
                         </tr>
                         </thead>
                         <tbody>
